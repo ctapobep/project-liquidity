@@ -1,4 +1,5 @@
 \documentclass[11pt,a4paper,oneside]{article}
+\usepackage{ulem}
 \begin{document}
 \section{Local Deployment}
 Imagine yourself joining the project, what's the first thing you'd like to have? Right - the project up and running. It's crucial for people to see the software in action to understand it, and it's not enough to see it in production or on some shared environment. Any other environment is more restrictive than local one: you don't have permissions to see everything like admin panel, or you can damage the environment by pressing a red button - and you don't want to damange anything on the first day of the project, don't you?
@@ -27,6 +28,11 @@ Last issue I can think of - is the complexity of environment. There might be som
 
 Let's go step by step and try to figure out how to cope with all these issues.
 \subsection{Heavyweigths}
-Some software is just created to eat too much, there are plenty of modules, hell a lot of unneded functionality 
+Some software is just created to eat too much, there is plenty of code, hell a lot of \sout{unneeded and overloaded} functionality and everything is packed into a single app. There is quite an obvious alternative here - creating SOA architecture. The idea is simple and well-known - splitting functionality into services that can communicate via different protocols. And it doesn't even matter whether it's SOAP, REST, JMS or even Protobuf. It's hard to exaggerate when it comes to benefits of such architecture:
+\begin{itemize}
+  \item Several teams can work on different code bases without stepping on each other toes. For a dozen of people it's much harder to work on a single SCM repository than on two separate repos, they start to introduce conflicts, work on branches and thus introducing merges and late integration with main codebase which itself results in more expenses because of late-discovered issues.
+  \item Releasing becomes more straightforward. Let's say the software is monolith. What if one part of team is ready to release and another part is still stabalizing? They both have to wait. This postpones releases and raises conflicts between teams. Even worse - what if both teams released, but one of them have to rollback? The more changes you introduce to a single release, the more you might need to rollback. Such problems disappear if codebase is split.
+  \item The area of knowledge becomes smaller when it comes to services. A new joiner has to know only a limited part of business: it's easier if you can start to work on a small piece. If you need more - you're welcome to learn another system, but this doesn't prevent you from kicking-off writing code in the first place!
+\end{itemize}
 
 \end{document}

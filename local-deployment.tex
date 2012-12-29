@@ -15,14 +15,18 @@ That's why you need the app started locally. Now we have a clear understanding o
 
 \section{Obsticles to have local environment}
 
-There are probably some people thinking that it's not always possible, and these people might be right - not all the projects are built the way they can be started on development machine. But what people are usually missing here is that these projects and this software is created by us, and it's our responsibility to make them as liquid as possible. Let's see what can be the reasons and how we can overcome these obstacles.
+There are probably some people thinking that it's not always possible, and these people might be right - not all the projects are built the way they can be started on development machine. But what people are usually missing here is that these projects and this software is created by us, and it's our responsibility to make them as liquid as possible. Let's see what can be the reasons and how we can overcome these obsticles.
 
 Some software might require 16G of RAM to get started with 8 cores, and I don't think that all development machines in your company have that horsepower. 
 
-Another case is - some projects are built the way it shouldn't be possible to run it on a single node. Some projects are built solely for distributed usage, there is no logical use case when you'd need to run it on single miserable machine.
+Another case is - some projects are built the way it shouldn't be possible to run it on a single node. They are built solely for distributed usage, there is no logical use case when you'd need to run it on single miserable machine.
 
 Additionally your system might need to collaborate with others, it might get input from them or produce output. In this case you might need to deploy the whole ecosystem of your organization which surely is not an option. Often, there are hundreds of systems connected to each other.
 
-Last issue I can think of - is the complexity of environment. There might be some big database like Oracle, or messaging-oriented middleware like IBM MQ, or Cassandra which can't be deployed on a single node anyway. 
+Last issue I can think of - is the complexity of environment. There might be some big cool database like Oracle which you don't want to install locally for example because it's hard to install on your particular OS or you can't do this because of licensing issues; or messaging-oriented firmware like Solace which seems to be very fast, but it requires special hardware; or Cassandra which can't be deployed on a single node anyway. 
+
+Let's go step by step and try to figure out how to cope with all these issues.
+\subsection{Heavyweigths}
+Some software is just created to eat too much, there are plenty of modules, hell a lot of unneded functionality 
 
 \end{document}
